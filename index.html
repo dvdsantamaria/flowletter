@@ -21,15 +21,25 @@
       text-decoration: none;
       color: inherit;
     }
-
-    /* Contenedor principal */
+    
+    /* Page Wrapper */
+    .page-wrapper {
+      max-width: 1246px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 5%;
+      padding-left: 2%;
+      padding-right: 2%;
+      font-family: Roboto, sans-serif;
+      position: relative;
+    }
+    
+    /* Contenedor principal interno */
     .container {
       width: 100%;
-      max-width: 1320px;
-      margin: 0 auto;
       padding: 20px;
     }
-
+    
     /* HEADER */
     .page-header {
       border-bottom: 1px solid #000;
@@ -55,39 +65,44 @@
       font-size: 0.9rem;
       display: inline-block;
     }
-
+    
     /* HERO SECTION */
-    /* HERO SECTION */
-    /* Estilos base para el hero */
- .heading-3.ch {
-   max-width: 43ch;
-   margin-bottom: 0;
-   margin-left: auto;
-   margin-right: auto;
-   font-size: 2.5rem;
-   line-height: 1.2;
-   font-family: Roboto, sans-serif;
-   font-weight: 700;
- }
- 
- /* Efecto highlight en el texto */
- .text-span-2 {
-   background-image: url("highlight.svg");
-   background-position: 0 0;
-   background-size: contain;
- }
- 
- /* Adaptaciones responsive según tu CSS de referencia */
- @media screen and (max-width: 767px) {
-   .heading-3.ch {
-     max-width: none;
-     font-size: 1.5rem;
-   }
- }
- 
-
-    /* DIVIDER */
+    .hero {
+      text-align: left;
+      padding: 50px 0;
+    }
+    .heading-3.ch {
+      max-width: 43ch;
+      margin: 0 auto 1.5rem auto;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
+    }
+    .bold-text {
+      font-weight: 700;
+    }
+    .text-span-2 {
+      background-image: url("highlight.svg");
+      background-position: 0 0;
+      background-size: contain;
+      display: inline-block;
+      padding-bottom: 3px;
+      white-space: nowrap;
+    }
+    @media screen and (max-width: 767px) {
+      .heading-3.ch {
+        max-width: none;
+        font-size: 1.5rem;
+      }
+    }
+    
+    /* DIVIDER - FULL WIDTH */
     .divider {
+      position: relative;
+      left: 50%;
+      width: 100vw;
+      margin-left: -50vw;
       text-align: center;
       margin: 60px 0;
       font-size: 2rem;
@@ -96,28 +111,27 @@
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="page-header">
-    <div class="container header-content">
-      <div class="logo"></div>
-      <a href="#" class="contact-btn">CONTACT</a>
+  <div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="page-header">
+      <div class="container header-content">
+        <div class="logo"></div>
+        <a href="#" class="contact-btn">CONTACT</a>
+      </div>
+    </header>
+    
+    <div class="container">
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <h1 class="heading-3 ch">
+          We buy exceptional businesses from owners that 
+          <span class="text-span-2">
+            <strong class="bold-text">care what happens next.</strong>
+          </span>
+        </h1>
+      </section>
     </div>
-  </header>
-
-  <div class="container">
-    <!-- HERO SECTION -->
-   <section class="hero">
- 
-     <h1 class="heading-3 ch">
-   <strong class="bold-text">We turn newsletters into on-demand content.</strong>
-   <span class="text-span-2">A clutter-free experience for readers.
-     <strong class="bold-text"> Real attention for brands.</strong>
-   </span>
- </h1>
- 
-       <a href="#" class="btn">Join the waitlist</a>
-     </section>
-
+    
     <div class="divider">⸻</div>
   </div>
 </body>
