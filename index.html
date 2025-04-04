@@ -2,32 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flowletter Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arbour Capital Layout</title>
   <style>
-    /* Reset y tipografía básica */
+    /* RESET BÁSICO */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
+    /* TIPOGRAFÍA Y BODY */
     body {
       font-family: Arial, sans-serif;
       color: #333;
       line-height: 1.5;
-      background-color: #faf7f1;
+      background-color: #faf7f1; /* color de fondo pleno */
     }
-    a { text-decoration: none; color: inherit; }
-    
-    /* Contenedor principal (máx. 1320px en desktop) */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
     .container {
       width: 100%;
       max-width: 1320px;
       margin: 0 auto;
       padding: 20px;
     }
-    
-    /* Botón */
+
+    /* HEADER (LOGO + CONTACT) */
+    .page-header {
+      border-bottom: 1px solid #000;
+      padding: 20px 0;
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      width: 150px;  /* Ajusta según tu SVG */
+      height: 40px;  /* Ajusta según tu SVG */
+      background-color: #000; /* Placeholder para tu logo SVG */
+      /* Cuando subas tu SVG, puedes usar background-image o <img> */
+    }
+    .contact-btn {
+      background-color: #000;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+
+    /* BOTÓN GLOBAL */
     .btn {
       display: inline-block;
       background-color: #0077ff;
@@ -38,120 +70,161 @@
       cursor: pointer;
       margin-top: 20px;
     }
-    .btn:hover { background-color: #005ecc; }
-    
-    /* Divider */
+    .btn:hover {
+      background-color: #005ecc;
+    }
+
+    /* DIVIDERS */
     .divider {
       text-align: center;
       margin: 60px 0;
       font-size: 2rem;
       color: #aaa;
     }
-    
+
     /* HERO SECTION */
-   /* Estilos base para el hero */
-.heading-3.ch {
-  max-width: 43ch;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 2.5rem;
-  line-height: 1.2;
-  font-family: Roboto, sans-serif;
-  font-weight: 700;
-}
+    .hero {
+      text-align: left;
+      padding: 50px 0;
+    }
+    .heading-3.ch {
+      max-width: 43ch;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1.5rem;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
+    }
+    .bold-text {
+      font-weight: 700;
+    }
+    /* Efecto highlight en parte del texto */
+    .text-span-2 {
+      background-image: url("highlight.svg"); /* tu subrayado */
+      background-position: left bottom;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: inline-block;
+      padding-bottom: 3px;
+      white-space: nowrap; /* evita que se corte a la mitad */
+    }
+    @media screen and (max-width: 767px) {
+      .heading-3.ch {
+        max-width: none;
+        font-size: 1.5rem;
+      }
+    }
 
-/* Efecto highlight en el texto */
-.text-span-2 {
-  background-image: url("highlight.svg");
-  background-position: 0 0;
-  background-size: contain;
-}
+    /* OUR PHILOSOPHY (2 columnas con items en orden vertical) */
+    .philosophy-section {
+      padding: 2rem 0;
+    }
+    .philosophy-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* 2 columnas */
+      grid-auto-flow: column;        /* llena verticalmente */
+      gap: 2rem;
+    }
+    .philosophy-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .philosophy-number {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+    .philosophy-heading {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .philosophy-text {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin: 0;
+      color: #000;
+    }
+    @media (max-width: 767px) {
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+        gap: 1.5rem;
+      }
+    }
 
-/* Adaptaciones responsive según tu CSS de referencia */
-@media screen and (max-width: 767px) {
-  .heading-3.ch {
-    max-width: none;
-    font-size: 1.5rem;
-  }
-}
+    /* OUR DIFFERENCE (3 columnas) */
+    .difference {
+      padding: 40px 0;
+      text-align: left;
+    }
+    .difference h2 {
+      margin-bottom: 40px;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .difference-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .difference-item {
+      flex: 1 1 calc(33.333% - 2rem);
+      min-width: 250px;
+      text-align: center;
+    }
+    /* Cuadrado negro placeholder para la ilustración */
+    .difference-item .icon {
+      width: 60px;
+      height: 60px;
+      background-color: #000; /* Espacio para tu imagen/ilustración */
+      margin: 0 auto 15px auto;
+    }
+    .difference-item h3 {
+      margin-bottom: 15px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .difference-item ul {
+      list-style: none;
+      padding-left: 0;
+      text-align: left;
+      margin: 0 auto;
+      max-width: 200px;
+    }
+    .difference-item ul li {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+    .difference-item ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #0077ff;
+    }
 
-    
-    /* OUR PHILOSOPHY */
-  /* Contenedor de la sección */
-.philosophy-section {
-  padding: 2rem 1rem;
-}
-
-/* Título principal */
-.philosophy-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  text-align: left;
-}
-
-/* Grid para organizar en 2 columnas por defecto */
-.philosophy-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* Con grid-auto-flow: column se llenan las columnas verticalmente:
-     El primer item (01) se coloca, luego el segundo (02) en la misma columna, 
-     y al pasar al siguiente, se ubican 03 y 04 en la segunda columna. */
-  grid-auto-flow: column;
-  gap: 2rem;
-}
-
-/* Cada bloque individual */
-.philosophy-item {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Número – estilizado en tono tenue */
-.philosophy-number {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 0.5rem;
-  opacity: 0.6;
-}
-
-/* Título del bloque */
-.philosophy-heading {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-/* Texto descriptivo */
-.philosophy-text {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin: 0;
-  color: #000;
-}
-
-/* Responsive: en móviles se apilan los bloques en una sola columna */
-@media (max-width: 767px) {
-  .philosophy-grid {
-    grid-template-columns: 1fr;
-    grid-auto-flow: row;
-    gap: 1.5rem;
-  }
-}
-
-    
-    
     /* OUR PROCESS (horizontal step layout) */
     .process {
-      padding: 40px 20px;
+      padding: 40px 0;
       text-align: center;
     }
     .process h2 {
       margin-bottom: 40px;
-      font-size: 2rem;
-      letter-spacing: 1px;
+      font-size: 1.5rem;
+      font-weight: 700;
     }
     .process-steps {
       display: flex;
@@ -164,263 +237,315 @@
       max-width: 300px;
       margin: 10px;
     }
-    .step h3 { font-size: 1.1rem; margin-bottom: 10px; }
-    .step p { font-size: 0.95rem; }
+    .step h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .step p {
+      font-size: 0.95rem;
+    }
     .arrow {
       font-size: 2rem;
       margin: 0 10px;
       align-self: center;
     }
-    
-    /* USE CASES WE COVER (8 blocks) */
-    .use-cases {
-      padding: 40px 20px;
-      text-align: center;
+    @media (max-width: 600px) {
+      .arrow {
+        display: none;
+      }
+      .process-steps {
+        flex-direction: column;
+      }
     }
-    .use-cases h2 {
+
+    /* BUSINESSES WE LOVE (8 blocks) */
+    .businesses-we-love {
+      padding: 40px 0;
+      text-align: left;
+    }
+    .businesses-we-love h2 {
       margin-bottom: 40px;
-      font-size: 2rem;
-      letter-spacing: 1px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: left;
     }
-    .use-cases-grid {
+    .businesses-grid {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      gap: 2rem;
+      justify-content: center;
     }
-    .use-case {
-      flex: 1 1 calc(25% - 20px);
+    .business-item {
+      flex: 1 1 calc(25% - 2rem);
+      min-width: 220px;
       background-color: #fafafa;
-      padding: 15px;
-      margin: 10px;
+      padding: 1rem;
       border-radius: 4px;
       text-align: center;
     }
-    .use-case .icon {
+    /* Cuadrado negro placeholder */
+    .business-item .icon {
       width: 60px;
       height: 60px;
-      background-color: #eee;
+      background-color: #000; /* Placeholder para tu ilustración */
       margin: 0 auto 10px auto;
     }
-    .use-case h3 {
+    .business-item h3 {
       font-size: 1rem;
       margin-bottom: 10px;
+      font-weight: 700;
     }
-    .use-case p {
+    .business-item p {
       font-size: 0.9rem;
+      margin: 0;
     }
-    
+    @media (max-width: 992px) {
+      .business-item {
+        flex: 1 1 calc(50% - 2rem);
+      }
+    }
+    @media (max-width: 600px) {
+      .business-item {
+        flex: 1 1 100%;
+      }
+    }
+
     /* FINAL CTA */
+    .footer-section {
+      padding: 40px 0;
+      border-top: 1px solid #000;
+    }
+    .footer-section h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .footer-section .center {
+      text-align: center;
+    }
+    .footer-section .btn {
+      margin-top: 1rem;
+    }
+
+    /* BOTÓN CTA SENCILLO */
     .final-cta {
       text-align: center;
-      padding: 60px 20px;
+      padding: 60px 0;
     }
     .final-cta h2 {
-      font-size: 2rem;
+      font-size: 1.5rem;
       margin-bottom: 20px;
+      font-weight: 700;
     }
     .final-cta p {
       font-size: 1rem;
       margin-bottom: 20px;
     }
-    .final-cta .link { color: #0077ff; text-decoration: underline; cursor: pointer; }
-    
-    /* RESPONSIVE */
-    @media (max-width: 992px) {
-      .philosophy-item { flex: 1 1 calc(50% - 20px); }
-      .difference-item { flex: 1 1 calc(50% - 20px); }
-      .use-case { flex: 1 1 calc(50% - 20px); }
+    .final-cta .link {
+      color: #0077ff;
+      text-decoration: underline;
+      cursor: pointer;
     }
-    @media (max-width: 600px) {
-      .philosophy-item, .difference-item, .use-case, .step {
-        flex: 1 1 100%;
-        max-width: 100%;
-      }
-      .arrow { display: none; }
-      .process-steps { flex-direction: column; }
-    }
+
   </style>
 </head>
 <body>
+  <!-- HEADER -->
+  <header class="page-header">
+    <div class="container header-content">
+      <div class="logo"></div>
+      <a href="#" class="contact-btn">CONTACT</a>
+    </div>
+  </header>
+
   <div class="container">
     <!-- HERO SECTION -->
     <section class="hero">
+      <h1 class="heading-3 ch">
+        We buy exceptional businesses from owners that 
+        <span class="text-span-2">
+          <strong class="bold-text">care what happens next.</strong>
+        </span>
+      </h1>
+    </section>
 
-    <h1 class="heading-3 ch">
-  <strong class="bold-text">We fix how people follow content. No spam, no inbox traps — </strong>
-  <span class="text-span-2">
-    <strong class="bold-text">just clean control over what you read next.</strong>
-  </span>
-</h1>
-      
-      <a href="#" class="btn">Join the waitlist</a>
-<section class="philosophy-section">
-  <h2 class="philosophy-title">OUR PHILOSOPHY</h2>
-  <div class="philosophy-grid">
-    <!-- Bloque 01 -->
-    <div class="philosophy-item">
-      <h3 class="philosophy-number">01 —</h3>
-      <h4 class="philosophy-heading">Keep it calm</h4>
-      <p class="philosophy-text">
-        You shouldn’t fear your inbox. Flowletter lets you follow content without stress or clutter.
-      </p>
-    </div>
-    <!-- Bloque 02 -->
-    <div class="philosophy-item">
-      <h3 class="philosophy-number">02 —</h3>
-      <h4 class="philosophy-heading">Respect readers</h4>
-      <p class="philosophy-text">
-        We don’t track you or bait you. We just help you read what you care about, quietly.
-      </p>
-    </div>
-    <!-- Bloque 03 -->
-    <div class="philosophy-item">
-      <h3 class="philosophy-number">03 —</h3>
-      <h4 class="philosophy-heading">On your terms</h4>
-      <p class="philosophy-text">
-        You’re in control. Follow, unfollow, or pause anytime. Notifications are always optional.
-      </p>
-    </div>
-    <!-- Bloque 04 -->
-    <div class="philosophy-item">
-      <h3 class="philosophy-number">04 —</h3>
-      <h4 class="philosophy-heading">No noise, no tricks</h4>
-      <p class="philosophy-text">
-        No dark patterns. No popups. No guilt. Just content, available when you want it.
-      </p>
-    </div>
-  </div>
-</section>
-
-    
     <div class="divider">⸻</div>
-    
-    <!-- OUR DIFFERENCE (3 columnas) -->
+
+    <!-- OUR PHILOSOPHY -->
+    <section class="philosophy-section">
+      <h2 class="philosophy-title">Our philosophy</h2>
+      <div class="philosophy-grid">
+        <!-- Bloque 01 -->
+        <div class="philosophy-item">
+          <h3 class="philosophy-number">01 —</h3>
+          <h4 class="philosophy-heading">Keep it simple</h4>
+          <p class="philosophy-text">
+            You won’t need a Mensa membership to negotiate with us.
+            Selling your business doesn’t need to be stressful or complicated.
+          </p>
+        </div>
+        <!-- Bloque 02 -->
+        <div class="philosophy-item">
+          <h3 class="philosophy-number">02 —</h3>
+          <h4 class="philosophy-heading">No a**holes</h4>
+          <p class="philosophy-text">
+            Life is too short to spend it with undesirables.
+            We make sure everyone in our ecosystem shares the same values as us.
+          </p>
+        </div>
+        <!-- Bloque 03 -->
+        <div class="philosophy-item">
+          <h3 class="philosophy-number">03 —</h3>
+          <h4 class="philosophy-heading">Grow, but the right way</h4>
+          <p class="philosophy-text">
+            We have no interest in growing profits at the expense of the employees that generate them.
+            We seek long-term sustainable growth over short-term sugar hits.
+          </p>
+        </div>
+        <!-- Bloque 04 -->
+        <div class="philosophy-item">
+          <h3 class="philosophy-number">04 —</h3>
+          <h4 class="philosophy-heading">Trenches over towers</h4>
+          <p class="philosophy-text">
+            Unlike other investors, we are hands-on because you can’t understand a business
+            from an ivory tower. We seek to collaborate with our management, not dictate from a distance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider">⸻</div>
+
+    <!-- OUR DIFFERENCE -->
     <section class="difference">
-      <h2>OUR DIFFERENCE</h2>
+      <h2>Our difference</h2>
       <div class="difference-items">
         <div class="difference-item">
-          <div class="icon icon-toggle"><!-- Placeholder para icono: toggle --></div>
-          <h3>Flowletter</h3>
+          <div class="icon"><!-- Placeholder negro para tu ilustración --></div>
+          <h3>Arbour Capital</h3>
           <ul>
-            <li>Inbox-free reading</li>
-            <li>One-click follow/unfollow</li>
-            <li>No data tracking ever</li>
-            <li>Simple, modern design</li>
+            <li>Targeted due diligence</li>
+            <li>Simple structures</li>
+            <li>Preference to promote existing staff</li>
+            <li>No predefined ownership period</li>
           </ul>
         </div>
         <div class="difference-item">
-          <div class="icon icon-envelope-alert"><!-- Placeholder para icono: envelope-alert --></div>
-          <h3>Email newsletters</h3>
+          <div class="icon"><!-- Placeholder negro para tu ilustración --></div>
+          <h3>Private Equity</h3>
           <ul>
-            <li>Fill up your inbox</li>
-            <li>Hard to unsubscribe</li>
-            <li>Full of tracking pixels</li>
-            <li>High noise, low signal</li>
+            <li>Long diligence process</li>
+            <li>Management replaced</li>
+            <li>Culture changes</li>
+            <li>Complicated structures</li>
+            <li>Short-term owners</li>
           </ul>
         </div>
         <div class="difference-item">
-          <div class="icon icon-gear"><!-- Placeholder para icono: gear --></div>
-          <h3>Other tools</h3>
+          <div class="icon"><!-- Placeholder negro para tu ilustración --></div>
+          <h3>Competitors</h3>
           <ul>
-            <li>Complex setup</li>
-            <li>Cold and cluttered UI</li>
-            <li>Feeds too chaotic</li>
-            <li>Not made for humans</li>
+            <li>Legacy disappears</li>
+            <li>Roles are consolidated</li>
+            <li>Management replaced</li>
+            <li>Uncertainty for employees</li>
+            <li>Risk of tyre kicking</li>
           </ul>
         </div>
       </div>
     </section>
-    
+
     <div class="divider">⸻</div>
-    
-    <!-- OUR PROCESS (horizontal step layout) -->
+
+    <!-- OUR PROCESS -->
     <section class="process">
-      <h2>OUR PROCESS</h2>
+      <h2>Our process</h2>
       <div class="process-steps">
         <div class="step">
-          <h3>Start reading</h3>
-          <p>Browse the library and find something you like.</p>
+          <h3>Discovery call</h3>
+          <p>Day 1</p>
         </div>
         <div class="arrow">→</div>
         <div class="step">
-          <h3>Follow what matters</h3>
-          <p>Use the switch to follow creators you trust.</p>
+          <h3>Assess initial info</h3>
+          <p>Day 1 to 14</p>
         </div>
         <div class="arrow">→</div>
         <div class="step">
-          <h3>Customize delivery</h3>
-          <p>Choose digest, manual check-in, or email alerts.</p>
+          <h3>Make an offer</h3>
+          <p>2 Weeks</p>
         </div>
         <div class="arrow">→</div>
         <div class="step">
-          <h3>Enjoy inbox peace</h3>
-          <p>No spam. No noise. Just pure, calm reading.</p>
+          <h3>Close the deal</h3>
+          <p>3 Months</p>
         </div>
       </div>
     </section>
-    
+
     <div class="divider">⸻</div>
-    
-    <!-- USE CASES WE COVER (8 blocks) -->
-    <section class="use-cases">
-      <h2>USE CASES WE COVER</h2>
-      <div class="use-cases-grid">
-        <div class="use-case">
-          <div class="icon icon-bar-chart"><!-- Placeholder para icono: bar-chart --></div>
-          <h3>Too many newsletters</h3>
-          <p>We help you follow the right ones, and skip the mess.</p>
+
+    <!-- BUSINESSES WE LOVE (8 blocks) -->
+    <section class="businesses-we-love">
+      <h2>Businesses we love</h2>
+      <div class="businesses-grid">
+        <div class="business-item">
+          <div class="icon"></div>
+          <h3>Size &amp; margins</h3>
+          <p>EBITDA $1.5m - $5.0m<br/>Profit margins above 15%.</p>
         </div>
-        <div class="use-case">
-          <div class="icon icon-star"><!-- Placeholder para icono: star --></div>
-          <h3>High-value content</h3>
-          <p>Never lose a good read again. Find it all, anytime.</p>
+        <div class="business-item">
+          <div class="icon"></div>
+          <h3>Competitive advantage</h3>
+          <p>What the business does that is hard to compete with.</p>
         </div>
-        <div class="use-case">
-          <div class="icon icon-happy-team"><!-- Placeholder para icono: happy-team --></div>
-          <h3>Better reading habits</h3>
-          <p>Focus on content you choose — not what interrupts you.</p>
+        <div class="business-item">
+          <div class="icon"></div>
+          <h3>High quality team</h3>
+          <p>Great team with a positive culture.</p>
         </div>
-        <div class="use-case">
-          <div class="icon icon-brain-path"><!-- Placeholder para icono: brain-path --></div>
-          <h3>Simpler is better</h3>
-          <p>One switch does it all. No setup, no confusion.</p>
+        <div class="business-item">
+          <div class="icon"></div>
+          <h3>Simpler the better</h3>
+          <p>A simple business model you can explain to kids.</p>
         </div>
-        <div class="use-case">
-          <div class="icon icon-vault"><!-- Placeholder para icono: vault --></div>
-          <h3>Privacy guaranteed</h3>
-          <p>No tracking, no profiling, no third-party selling ever.</p>
+        <div class="business-item">
+          <div class="icon"></div>
+          <h3>Industry agnostic</h3>
+          <p>Non-cyclical or capital intensive.</p>
         </div>
-        <div class="use-case">
-          <div class="icon icon-focused-reader"><!-- Placeholder para icono: focused-reader --></div>
-          <h3>Distraction-free</h3>
-          <p>No ads. No scroll traps. Just peaceful, focused reading.</p>
+        <div class="business-item">
+          <div class="icon"></div>
+          <h3>No existential threats</h3>
+          <p>Is the industry at risk of obsolescence?</p>
         </div>
-        <div class="use-case">
-          <div class="icon icon-switch-on"><!-- Placeholder para icono: switch-on --></div>
-          <h3>Always in control</h3>
-          <p>Pause, resume, or stop following with a single click.</p>
+        <div class="business-item">
+          <div class="icon"></div>
+          <h3>No existential threats</h3>
+          <p>Is the industry at risk of obsolescence?</p>
         </div>
-        <div class="use-case">
-          <div class="icon icon-network"><!-- Placeholder para icono: network --></div>
-          <h3>Works for everyone</h3>
-          <p>It’s designed for readers, writers, brands and teams alike.</p>
+        <div class="business-item">
+          <div class="icon"></div>
+          <h3>Limited concentration</h3>
+          <p>Diverse and loyal customer/supplier base.</p>
         </div>
       </div>
     </section>
-    
+
     <div class="divider">⸻</div>
-    
+
     <!-- FINAL CTA -->
-    <section class="final-cta">
-      <h2>Sign up to our newsletter.</h2>
-      <p>Just kidding — join the waitlist to try it out.</p>
-      <a href="#" class="btn">Join the waitlist</a>
-      <p>Or just <a href="#" class="link">get in touch</a> — no pressure.</p>
+    <section class="footer-section">
+      <div class="center">
+        <h3>Not sure your business fits the bill?<br/>Send us an email anyway.</h3>
+        <a href="#" class="btn">Get in touch</a>
+      </div>
     </section>
   </div>
-  
+
+  <!-- SCRIPT BÁSICO PARA BOTONES -->
   <script>
-    // Funcionalidad básica para botones
     document.querySelectorAll('.btn').forEach(btn => {
       btn.addEventListener('click', function(e) {
         e.preventDefault();
