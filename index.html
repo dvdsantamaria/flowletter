@@ -58,30 +58,33 @@
       margin-bottom: 20px;
     }
    
+.heading-3.ch {
+  max-width: 43ch;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+}
+
+.bold-text {
+  font-weight: 700;
+}
+
+/* Permite que el texto se divida en varias líneas y aplica el resaltado en cada línea */
 .text-span-2 {
-  display: inline; /* o inline-block, pero inline es ideal para box-decoration-break */
-  /* Elimina white-space: nowrap para permitir el corte de línea */
+  display: inline;
+  /* Permite que cada fragmento de línea tenga su propio fondo */
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
-  padding: 0 0.1em; /* Ajusta este padding según necesites */
-  background-image: url("highlight.svg");
-  background-repeat: no-repeat;
+  padding: 0 0.1em;
+  background: url("highlight.svg") no-repeat;
   background-position: left bottom;
-  background-size: 100% 0.6em; /* Ajusta la altura del highlight */
+  background-size: 100% 0.6em; /* Ajusta este valor según el grosor deseado del resaltado */
 }
 
-
-.text-span-2::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0.15em;          /* Ajusta según tu fuente para alinear el “subrayado” */
-  height: 0.55em;          /* Ajusta a la altura de tu subrayado */
-  background: url("highlight.svg") no-repeat center;
-  background-size: cover;  /* Ajusta si quieres que se adapte al ancho */
-  z-index: -1;             /* Se ubica detrás del texto */
-}
     
     /* OUR PHILOSOPHY */
     .philosophy {
