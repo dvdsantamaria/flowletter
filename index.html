@@ -48,7 +48,7 @@
       color: #aaa;
     }
     
-   .hero {
+ .hero {
       text-align: center;
       padding: 80px 20px;
     }
@@ -58,7 +58,7 @@
     }
     
     .heading-3.ch {
-      max-width: 43ch;        /* Desktop */
+      max-width: 43ch;
       margin: 0 auto;
       font-size: 2.5rem;
       line-height: 1.2;
@@ -70,7 +70,7 @@
       font-weight: 700;
     }
     
-    /* Ajuste para tablets (ejemplo) */
+    /* Ajuste para tablets */
     @media (max-width: 768px) {
       .heading-3.ch {
         max-width: 35ch;
@@ -79,7 +79,7 @@
       }
     }
     
-    /* Ajuste para móviles (ejemplo) */
+    /* Ajuste para móviles */
     @media (max-width: 480px) {
       .heading-3.ch {
         max-width: 30ch;
@@ -88,6 +88,16 @@
       }
     }
     
+    /* Versión solicitada para el highlight */
+    .text-span-2 {
+      display: inline-block;
+      white-space: nowrap;
+      background-image: url("highlight.svg");
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      background-size: contain;
+      padding-bottom: 3px;
+    }
     /* Texto destacado con SVG embebido */
     .text-span-2 {
       display: inline;
