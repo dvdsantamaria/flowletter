@@ -78,87 +78,67 @@
 
     
     /* OUR PHILOSOPHY */
-    .philosophy {
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .philosophy h2 {
-      margin-bottom: 40px;
-      font-size: 2rem;
-      letter-spacing: 1px;
-    }
-    .philosophy-items {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    .philosophy-item {
-      flex: 1 1 calc(25% - 20px);
-      margin: 10px;
-      text-align: center;
-    }
-    .philosophy-item .icon {
-      width: 60px;
-      height: 60px;
-      background-color: #eee;
-      margin: 0 auto 10px auto;
-      /* Aquí podrás reemplazar por la imagen o asset en el futuro */
-    }
-    .philosophy-item h3 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
-    .philosophy-item p { font-size: 0.95rem; }
+   /* Contenedor general */
+.philosophy-section {
+  width: 100%;
+  padding: 2rem 1rem;
+  /* Ajusta si tienes un contenedor .container o .container-section */
+}
+
+/* Título principal */
+.philosophy-title {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;  /* Ajusta según tu tipografía */
+  text-align: left;  /* O 'center' si lo prefieres */
+}
+
+/* Grid de 4 columnas en desktop */
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem; /* Espacio entre columnas */
+}
+
+/* Cada "bloque" (número + heading + texto) */
+.philosophy-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Número (01, 02, etc.) */
+.philosophy-number {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #000;         /* Ajusta si necesitas un gris o negro diferente */
+  margin-bottom: 0.5rem;
+  opacity: 0.6;        /* Para simular la estética tenue de la captura */
+}
+
+/* Título de cada bloque (Keep it simple, etc.) */
+.philosophy-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Párrafo de cada bloque */
+.philosophy-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;  /* Para que coincida con la estética minimalista */
+  color: #000;
+}
+
+/* Responsive: en móviles se apilan en orden 01, 02, 03, 04 */
+@media (max-width: 767px) {
+  .philosophy-grid {
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 1.5rem;
+  }
+}
+
     
-    /* OUR DIFFERENCE (3 columnas) */
-    .difference {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .difference h2 {
-      margin-bottom: 40px;
-      font-size: 2rem;
-      letter-spacing: 1px;
-    }
-    .difference-items {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    .difference-item {
-      flex: 1 1 calc(33.33% - 20px);
-      padding: 20px;
-      margin: 10px;
-      border-radius: 4px;
-    }
-    .difference-item .icon {
-      width: 80px;
-      height: 80px;
-      background-color: #ddd;
-      margin: 0 auto 15px auto;
-    }
-    .difference-item h3 {
-      margin-bottom: 15px;
-      font-size: 1.2rem;
-    }
-    .difference-item ul {
-      list-style: none;
-      text-align: left;
-      padding-left: 0;
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-    .difference-item ul li {
-      margin-bottom: 8px;
-      position: relative;
-      padding-left: 20px;
-    }
-    .difference-item ul li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #0077ff;
-    }
     
     /* OUR PROCESS (horizontal step layout) */
     .process {
