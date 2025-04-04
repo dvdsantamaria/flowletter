@@ -57,36 +57,34 @@
     }
 
     /* HERO SECTION */
-    .hero {
-      text-align: left;
-      padding: 50px 0;
-    }
-    .heading-3.ch {
-      max-width: 43ch;
-      margin: 0 auto 1.5rem auto;
-      font-size: 2.5rem;
-      line-height: 1.2;
-      font-family: Roboto, sans-serif;
-      font-weight: 700;
-    }
-    .bold-text {
-      font-weight: 700;
-    }
-    .text-span-2 {
-      background-image: url("highlight.svg");
-      background-position: left bottom;
-      background-repeat: no-repeat;
-      background-size: contain;
-      display: inline-block;
-      padding-bottom: 3px;
-      white-space: nowrap;
-    }
-    @media screen and (max-width: 767px) {
-      .heading-3.ch {
-        max-width: none;
-        font-size: 1.5rem;
-      }
-    }
+    /* HERO SECTION */
+    /* Estilos base para el hero */
+ .heading-3.ch {
+   max-width: 43ch;
+   margin-bottom: 0;
+   margin-left: auto;
+   margin-right: auto;
+   font-size: 2.5rem;
+   line-height: 1.2;
+   font-family: Roboto, sans-serif;
+   font-weight: 700;
+ }
+ 
+ /* Efecto highlight en el texto */
+ .text-span-2 {
+   background-image: url("highlight.svg");
+   background-position: 0 0;
+   background-size: contain;
+ }
+ 
+ /* Adaptaciones responsive según tu CSS de referencia */
+ @media screen and (max-width: 767px) {
+   .heading-3.ch {
+     max-width: none;
+     font-size: 1.5rem;
+   }
+ }
+ 
 
     /* DIVIDER */
     .divider {
