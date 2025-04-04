@@ -78,62 +78,65 @@
 
     
     /* OUR PHILOSOPHY */
-   /* Contenedor general */
+  /* Contenedor de la sección */
 .philosophy-section {
-  width: 100%;
   padding: 2rem 1rem;
-  /* Ajusta si tienes un contenedor .container o .container-section */
 }
 
 /* Título principal */
 .philosophy-title {
-  margin-bottom: 2rem;
   font-size: 1.5rem;
-  font-weight: 700;  /* Ajusta según tu tipografía */
-  text-align: left;  /* O 'center' si lo prefieres */
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
-/* Grid de 4 columnas en desktop */
+/* Grid para organizar en 2 columnas por defecto */
 .philosophy-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem; /* Espacio entre columnas */
+  grid-template-columns: 1fr 1fr;
+  /* Con grid-auto-flow: column se llenan las columnas verticalmente:
+     El primer item (01) se coloca, luego el segundo (02) en la misma columna, 
+     y al pasar al siguiente, se ubican 03 y 04 en la segunda columna. */
+  grid-auto-flow: column;
+  gap: 2rem;
 }
 
-/* Cada "bloque" (número + heading + texto) */
+/* Cada bloque individual */
 .philosophy-item {
   display: flex;
   flex-direction: column;
 }
 
-/* Número (01, 02, etc.) */
+/* Número – estilizado en tono tenue */
 .philosophy-number {
   font-size: 0.9rem;
   font-weight: 700;
-  color: #000;         /* Ajusta si necesitas un gris o negro diferente */
+  color: #000;
   margin-bottom: 0.5rem;
-  opacity: 0.6;        /* Para simular la estética tenue de la captura */
+  opacity: 0.6;
 }
 
-/* Título de cada bloque (Keep it simple, etc.) */
+/* Título del bloque */
 .philosophy-heading {
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
-/* Párrafo de cada bloque */
+/* Texto descriptivo */
 .philosophy-text {
   font-size: 0.9rem;
   line-height: 1.4;
-  margin: 0;  /* Para que coincida con la estética minimalista */
+  margin: 0;
   color: #000;
 }
 
-/* Responsive: en móviles se apilan en orden 01, 02, 03, 04 */
+/* Responsive: en móviles se apilan los bloques en una sola columna */
 @media (max-width: 767px) {
   .philosophy-grid {
-    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
     gap: 1.5rem;
   }
 }
@@ -250,57 +253,41 @@
 </h1>
       
       <a href="#" class="btn">Join the waitlist</a>
-    </section>
-    
-    <div class="divider">⸻</div>
-    
-    <!-- OUR PHILOSOPHY -->
-  <section class="philosophy-section">
-  <h2 class="philosophy-title">Our philosophy</h2>
+<section class="philosophy-section">
+  <h2 class="philosophy-title">OUR PHILOSOPHY</h2>
   <div class="philosophy-grid">
-    
     <!-- Bloque 01 -->
     <div class="philosophy-item">
-      <h3 class="philosophy-number">01 –</h3>
-      <h4 class="philosophy-heading">Keep it simple</h4>
+      <h3 class="philosophy-number">01 —</h3>
+      <h4 class="philosophy-heading">Keep it calm</h4>
       <p class="philosophy-text">
-        You won’t need a Mensa membership to negotiate with us.
-        Selling your business doesn’t need to be stressful or complicated.
+        You shouldn’t fear your inbox. Flowletter lets you follow content without stress or clutter.
       </p>
     </div>
-    
     <!-- Bloque 02 -->
     <div class="philosophy-item">
-      <h3 class="philosophy-number">02 –</h3>
-      <h4 class="philosophy-heading">No a**holes</h4>
+      <h3 class="philosophy-number">02 —</h3>
+      <h4 class="philosophy-heading">Respect readers</h4>
       <p class="philosophy-text">
-        Life is too short to spend it with undesirables.
-        We make sure everyone in our ecosystem shares the same values as us.
+        We don’t track you or bait you. We just help you read what you care about, quietly.
       </p>
     </div>
-    
     <!-- Bloque 03 -->
     <div class="philosophy-item">
-      <h3 class="philosophy-number">03 –</h3>
-      <h4 class="philosophy-heading">Grow, but the right way</h4>
+      <h3 class="philosophy-number">03 —</h3>
+      <h4 class="philosophy-heading">On your terms</h4>
       <p class="philosophy-text">
-        We have no interest in growing profits at the expense of the employees
-        that generate them. We seek long-term sustainable growth over
-        short-term sugar hits.
+        You’re in control. Follow, unfollow, or pause anytime. Notifications are always optional.
       </p>
     </div>
-    
     <!-- Bloque 04 -->
     <div class="philosophy-item">
-      <h3 class="philosophy-number">04 –</h3>
-      <h4 class="philosophy-heading">Trenches over towers</h4>
+      <h3 class="philosophy-number">04 —</h3>
+      <h4 class="philosophy-heading">No noise, no tricks</h4>
       <p class="philosophy-text">
-        Unlike other investors, we are hands-on because you can’t understand
-        a business from an ivory tower. We seek to collaborate with our
-        management, not dictate from a distance.
+        No dark patterns. No popups. No guilt. Just content, available when you want it.
       </p>
     </div>
-
   </div>
 </section>
 
