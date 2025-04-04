@@ -21,7 +21,9 @@
       text-decoration: none;
       color: inherit;
     }
-    
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
     /* Page Wrapper */
     .page-wrapper {
       max-width: 1246px;
@@ -129,8 +131,13 @@
       color: #000;
       margin-bottom: 0.5rem;
     }
-    .philosophy-heading::before {
-  content: "01 – "; /* o 02, 03, etc. */
+    .philosophy-grid {
+  counter-reset: philosophy-counter; /* Resetea el contador */
+}
+
+.philosophy-heading::before {
+  counter-increment: philosophy-counter; /* Incrementa el contador por cada ítem */
+  content: counter(philosophy-counter, decimal-leading-zero) " – ";
   opacity: 0.4;
   margin-right: 0.25rem;
 }
