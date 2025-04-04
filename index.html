@@ -48,66 +48,34 @@
       color: #aaa;
     }
     
- .hero {
-      text-align: center;
-      padding: 80px 20px;
-    }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-    }
-    
-    .heading-3.ch {
-      max-width: 43ch;
-      margin: 0 auto;
-      font-size: 2.5rem;
-      line-height: 1.2;
-      font-family: Roboto, sans-serif;
-      font-weight: 700;
-    }
-    
-    .bold-text {
-      font-weight: 700;
-    }
-    
-    /* Ajuste para tablets */
-    @media (max-width: 768px) {
-      .heading-3.ch {
-        max-width: 35ch;
-        font-size: 2rem;
-        line-height: 1.3;
-      }
-    }
-    
-    /* Ajuste para móviles */
-    @media (max-width: 480px) {
-      .heading-3.ch {
-        max-width: 30ch;
-        font-size: 1.7rem;
-        line-height: 1.3;
-      }
-    }
-    
-    /* Versión solicitada para el highlight */
-    .text-span-2 {
-      display: inline-block;
-      white-space: nowrap;
-      background-image: url("highlight.svg");
-      background-repeat: no-repeat;
-      background-position: left bottom;
-      background-size: contain;
-      padding-bottom: 3px;
-    }
-    /* Texto destacado con SVG embebido */
-    .text-span-2 {
-      display: inline;
-      box-decoration-break: clone;
-      -webkit-box-decoration-break: clone;
-      padding: 0 0.1em;
-      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='20' viewBox='0 0 200 20'><path fill='%23a8e063' d='M0,15 Q100,30 200,15 L200,20 L0,20 Z'/></svg>") no-repeat;
-      background-position: left bottom;
-      background-size: 100% 0.6em;
-    }
+    /* HERO SECTION */
+   /* Estilos base para el hero */
+.heading-3.ch {
+  max-width: 43ch;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+}
+
+/* Efecto highlight en el texto */
+.text-span-2 {
+  background-image: url("highlight.svg");
+  background-position: 0 0;
+  background-size: contain;
+}
+
+/* Adaptaciones responsive según tu CSS de referencia */
+@media screen and (max-width: 767px) {
+  .heading-3.ch {
+    max-width: none;
+    font-size: 1.5rem;
+  }
+}
+
     
     /* OUR PHILOSOPHY */
     .philosophy {
@@ -294,10 +262,6 @@
     <!-- HERO SECTION -->
     <section class="hero">
 
-
-
-
-      
     <h1 class="heading-3 ch">
   <strong class="bold-text">We fix how people follow content. No spam, no inbox traps — </strong>
   <span class="text-span-2">
