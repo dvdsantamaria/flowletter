@@ -159,6 +159,96 @@
     }
 
 
+    /* OUR DIFFERENCE */
+.difference-section {
+  padding: 40px 0;
+  border-top: 1px solid #000; /* línea de separación superior (opcional) */
+}
+
+.difference-title {
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.grid-content-wrapper {
+  margin-top: 0.5rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+/* Grid principal con 2 columnas en desktop */
+.difference-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.difference-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido en columna */
+  text-align: center;
+}
+
+/* Cuadrado negro placeholder para la ilustración */
+.black-square {
+  width: 6rem;
+  height: 6rem;
+  background-color: #000;
+  margin-bottom: 1rem;
+}
+
+/* Encabezado de cada columna (Arbour Capital, Private Equity) */
+.difference-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+/* Grid de 2 columnas para checkbox y texto */
+.grid-2 {
+  display: grid;
+  grid-template-columns: auto 1fr; 
+  gap: 0.5rem 1rem; 
+  text-align: left;
+  align-items: start;
+  justify-content: start;
+  width: 100%;
+  max-width: 250px; /* Ajusta si quieres un ancho específico */
+  margin: 0 auto;   /* Centra el grid si tiene ancho fijo */
+}
+
+/* Checkbox de “check” */
+.checkbox {
+  width: 1.3rem;
+  height: 1.3rem;
+  background-image: url("https://uploads-ssl.webflow.com/641ce32…/648066a…_noun-check-929005.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  border: 1px solid #000;
+  font-size: 1.3rem;
+  position: relative;
+  top: 0.2rem;
+}
+
+/* Checkbox de “X” (o redondo) */
+.checkbox.round {
+  background-image: url("https://uploads-ssl.webflow.com/641ce32…/6480671362f7edb0c7411b00_noun-x-1890803.svg");
+  border-radius: 50%;
+}
+
+/* Responsive: 1 columna en pantallas pequeñas */
+@media (max-width: 767px) {
+  .difference-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -221,6 +311,49 @@
     </div>
   </div>
 </section>
+
+      <section class="difference-section">
+  <div class="container">
+    <h2 class="difference-title">Our difference</h2>
+    <div class="grid-content-wrapper">
+      <div class="difference-grid">
+        <!-- Columna 1 -->
+        <div class="difference-wrapper">
+          <div class="black-square"></div>
+          <h3 class="difference-heading">Arbour Capital</h3>
+          <div class="grid-2">
+            <div class="checkbox"></div>
+            <p>Targeted due diligence</p>
+            <div class="checkbox"></div>
+            <p>Simple structures</p>
+            <div class="checkbox"></div>
+            <p>Preference to promote existing staff</p>
+            <div class="checkbox"></div>
+            <p>No predefined ownership period</p>
+          </div>
+        </div>
+        <!-- Columna 2 -->
+        <div class="difference-wrapper">
+          <div class="black-square"></div>
+          <h3 class="difference-heading">Private Equity</h3>
+          <div class="grid-2">
+            <div class="checkbox round"></div>
+            <p>Long diligence process</p>
+            <div class="checkbox round"></div>
+            <p>Management replaced</p>
+            <div class="checkbox round"></div>
+            <p>Culture changes</p>
+            <div class="checkbox round"></div>
+            <p>Complicated structures</p>
+            <div class="checkbox round"></div>
+            <p>Short-term owners</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
     </div>
