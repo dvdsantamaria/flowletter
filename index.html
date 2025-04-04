@@ -81,17 +81,17 @@
     .bold-text {
       font-weight: 700;
     }
-    .text-span-2 {
-      display: inline;
-      /* Permite el wrap en cada línea y aplica el highlight a cada fragmento */
-      box-decoration-break: clone;
-      -webkit-box-decoration-break: clone;
-      padding: 0 0.1em;
-      background-image: url("highlight.svg");
-      background-repeat: no-repeat;
-      background-position: left bottom;
-      background-size: 100% 0.6em;
-    }
+  .text-span-2 {
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 0.1em;
+  background-image: url("highlight.svg");
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  background-size: auto 0.6em;
+}
+
     @media screen and (max-width: 767px) {
       .heading-3.ch {
         max-width: none;
