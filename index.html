@@ -249,6 +249,119 @@
 }
 
 
+
+    /* OUR PROCESS SECTION */
+.process-section {
+  padding: 40px 0;
+}
+
+.process-title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #000;
+  text-align: left;
+}
+
+/* Wrapper para la grid (usa el mismo padding que .grid-content-wrapper si lo necesitás) */
+.grid-content-wrapper {
+  margin-top: 0.5rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+/* Layout Desktop: usa grid-auto-flow: column para colocar los items en fila */
+.process-grid.desktop {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Estilos para cada paso */
+.process-grid.desktop .step {
+  text-align: center;
+}
+
+.process-grid.desktop .heading-6 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+/* Flechas: usa las mismas rutas y aplica transformaciones para invertir o desplazar si es necesario */
+.process-grid.desktop .image-2 {
+  width: 30px;
+  height: auto;
+}
+
+.process-grid.desktop .image-2.flip {
+  transform: scaleX(-1);
+}
+
+.process-grid.desktop .image-2.flip.shifted {
+  transform: scaleX(-1) translateX(-5px);
+}
+
+/* Doodles decorativos */
+.process-grid.desktop .image-3 {
+  width: 40px; /* Doodle circle */
+}
+
+.process-grid.desktop .image-4 {
+  width: 100px; /* Squiggle */
+  margin-top: 1rem;
+}
+
+/* Layout Mobile: se apilan en columna */
+.process-grid.mobile {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  text-align: center;
+}
+
+.process-grid.mobile .heading-6 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.process-grid.mobile .image-2.mobile {
+  width: 30px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.process-grid.mobile .squiggle {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.process-grid.mobile .ring {
+  width: 40px;
+  margin: 0 auto;
+}
+
+/* Mostrar layout desktop en pantallas amplias, mobile en pantallas pequeñas */
+@media screen and (max-width: 767px) {
+  .process-grid.desktop {
+    display: none;
+  }
+  .process-grid.mobile {
+    display: grid;
+  }
+  .grid-content-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+
+
+
+    
   </style>
 </head>
 <body>
@@ -356,6 +469,58 @@
   </div>
 </section>
 
+<section class="process-section">
+  <div class="container">
+    <h2 class="process-title">Our process</h2>
+    <div class="grid-content-wrapper">
+      <!-- Layout Desktop -->
+      <div class="process-grid desktop">
+        <!-- Paso 1 -->
+        <div class="step">
+          <h3 class="heading-6">Discovery call<br><strong>Day 1</strong></h3>
+        </div>
+        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg" loading="lazy" alt="Arrow" class="image-2" />
+        
+        <!-- Paso 2 -->
+        <div class="step">
+          <h3 class="heading-6">Assess initial info<br><strong>Day 1 to 14</strong></h3>
+        </div>
+        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg" loading="lazy" alt="Arrow" class="image-2 flip" />
+        
+        <!-- Paso 3 -->
+        <div class="step">
+          <h3 class="heading-6">Make an offer<br><strong>2 Weeks</strong></h3>
+        </div>
+        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg" loading="lazy" alt="Arrow" class="image-2 flip shifted" />
+        
+        <!-- Paso 4 -->
+        <div class="step">
+          <h3 class="heading-6">Close the deal<br><strong>3 Months</strong></h3>
+        </div>
+        
+        <!-- Decorativos -->
+        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/6481950f2b75cd4512c77cc2_4%20noun-doodle-circle-2405565.svg" loading="lazy" alt="Doodle Circle" class="image-3" />
+        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648196678d3279805da4fb3d_squiggle.svg" loading="lazy" alt="Squiggle" class="image-4" />
+      </div>
+      
+      <!-- Layout Mobile -->
+      <div class="process-grid mobile">
+        <h3 class="heading-6">Discovery call<br><strong>Day 1</strong></h3>
+        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg" loading="lazy" alt="Arrow" class="image-2 mobile _1" />
+        
+        <h3 class="heading-6">Assess initial info<br><strong>Day 1 to 14</strong></h3>
+        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg" loading="lazy" alt="Arrow" class="image-2 mobile flip" />
+        
+        <h3 class="heading-6">Make an offer<br><strong>2 Weeks</strong></h3>
+        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg" loading="lazy" alt="Arrow" class="image-2 mobile" />
+        
+        <h3 class="heading-6">Close the deal<br><strong>3 Months</strong></h3>
+        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648196678d3279805da4fb3d_squiggle.svg" loading="lazy" alt="Squiggle" class="squiggle" />
+        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/6481950f2b75cd4512c77cc2_4%20noun-doodle-circle-2405565.svg" loading="lazy" alt="Doodle Circle" class="ring" />
+      </div>
+    </div>
+  </div>
+</section>
 
 
     </div>
