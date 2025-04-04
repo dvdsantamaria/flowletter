@@ -58,15 +58,22 @@
       margin-bottom: 20px;
     }
    
+.text-span-2 {
+  position: relative;      /* Para ubicar el pseudo-elemento */
+  display: inline-block;   /* Mantiene el ancho al del texto */
+  white-space: nowrap;     /* Opcional: evita que se parta en varias líneas */
+}
 
-   .text-span-2 {
-  display: inline-block;
-  white-space: nowrap;
-  background-image: url("highlight.svg");
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  background-size: contain;
-  padding-bottom: 3px;
+.text-span-2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.15em;          /* Ajusta según tu fuente para alinear el “subrayado” */
+  height: 0.55em;          /* Ajusta a la altura de tu subrayado */
+  background: url("highlight.svg") no-repeat center;
+  background-size: cover;  /* Ajusta si quieres que se adapte al ancho */
+  z-index: -1;             /* Se ubica detrás del texto */
 }
     
     /* OUR PHILOSOPHY */
