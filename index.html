@@ -57,10 +57,16 @@
       font-size: 2.8rem;
       margin-bottom: 20px;
     }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
+   
+
+    .text-span-2 {
+  display: inline-block; /* Para que el fondo se ajuste al ancho del texto */
+  background-image: url("highlight.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: contain;
+  padding-bottom: 3px; /* Ajusta este valor según convenga */
+}
     
     /* OUR PHILOSOPHY */
     .philosophy {
@@ -246,8 +252,14 @@
   <div class="container">
     <!-- HERO SECTION -->
     <section class="hero">
-      <h1>We fix how people follow content.</h1>
-      <p>No spam, no inbox traps — just clean control over what you read next.</p>
+
+    <h1 class="heading-3 ch">
+  <strong class="bold-text">We fix how people follow content. No spam, no inbox traps — </strong>
+  <span class="text-span-2">
+    <strong class="bold-text">just clean control over what you read next.</strong>
+  </span>
+</h1>
+      
       <a href="#" class="btn">Join the waitlist</a>
     </section>
     
