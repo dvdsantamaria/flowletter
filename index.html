@@ -59,10 +59,17 @@
     }
    
 .text-span-2 {
-  position: relative;      /* Para ubicar el pseudo-elemento */
-  display: inline-block;   /* Mantiene el ancho al del texto */
-  white-space: nowrap;     /* Opcional: evita que se parta en varias líneas */
+  display: inline; /* o inline-block, pero inline es ideal para box-decoration-break */
+  /* Elimina white-space: nowrap para permitir el corte de línea */
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 0.1em; /* Ajusta este padding según necesites */
+  background-image: url("highlight.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 0.6em; /* Ajusta la altura del highlight */
 }
+
 
 .text-span-2::before {
   content: "";
