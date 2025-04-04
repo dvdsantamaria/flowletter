@@ -98,6 +98,47 @@
         font-size: 1.5rem;
       }
     }
+
+
+
+  /* OUR PHILOSOPHY */
+    .philosophy-section {
+      border-top: 1px solid #000; /* línea superior para separar */
+      padding: 40px 0;
+    }
+    .philosophy-title {
+      margin-bottom: 2rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* 2 columnas en desktop */
+      gap: 2rem;
+    }
+    .philosophy-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .philosophy-heading {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 0.5rem;
+    }
+    .philosophy-text {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: #000;
+      margin: 0;
+    }
+    @media (max-width: 767px) {
+      .philosophy-grid {
+        grid-template-columns: 1fr; /* Se apilan en una columna */
+      }
+    }
+
+
   </style>
 </head>
 <body>
@@ -121,6 +162,49 @@
           </span>
         </h1>
       </section>
+
+        <!-- OUR PHILOSOPHY -->
+    <section class="philosophy-section">
+      <div class="container">
+        <h2 class="philosophy-title">Our philosophy</h2>
+        <div class="philosophy-grid">
+          <!-- Bloque 01 -->
+          <div class="philosophy-item">
+            <h3 class="philosophy-heading">01 – Keep it simple</h3>
+            <p class="philosophy-text">
+              You won’t need a Mensa membership to negotiate with us.
+              Selling your business doesn’t need to be stressful or complicated.
+            </p>
+          </div>
+          <!-- Bloque 02 -->
+          <div class="philosophy-item">
+            <h3 class="philosophy-heading">02 – No a**holes</h3>
+            <p class="philosophy-text">
+              Life is too short to spend it with undesirables.
+              We make sure everyone in our ecosystem shares the same values as us.
+            </p>
+          </div>
+          <!-- Bloque 03 -->
+          <div class="philosophy-item">
+            <h3 class="philosophy-heading">03 – Grow, but the right way</h3>
+            <p class="philosophy-text">
+              We have no interest in growing profits at the expense of the employees
+              that generate them. We seek long-term sustainable growth
+              over short-term sugar hits.
+            </p>
+          </div>
+          <!-- Bloque 04 -->
+          <div class="philosophy-item">
+            <h3 class="philosophy-heading">04 – Trenches over towers</h3>
+            <p class="philosophy-text">
+              Unlike other investors, we are hands-on because you can’t understand a business
+              from an ivory tower. We seek to collaborate with our management, not dictate
+              from a distance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     </div>
   </div>
 </body>
