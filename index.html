@@ -1,529 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flowletter Layout - Header & Hero</title>
-  <style>
-    /* Reset y tipografía básica */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      color: #333;
-      line-height: 1.5;
-      background-color: #faf7f1;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowletter Layout - Header & Hero</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- HEADER -->
+      <header class="page-header">
+        <div class="container header-content">
+          <div class="logo"></div>
+          <a href="#" class="contact-btn">CONTACT</a>
+        </div>
+      </header>
 
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-    /* Page Wrapper */
-    .page-wrapper {
-      max-width: 1246px;
-      margin: 0 auto;
-      padding: 0 2%;
-      padding-bottom: 5%;
-      font-family: Roboto, sans-serif;
-      position: relative;
-    }
-    
-    /* Contenedor principal interno */
-    .container {
-      width: 100%;
-      padding: 20px;
-    }
-    
-    /* HEADER */
-    .page-header {
-      border-bottom: 1px solid #000;
-      padding: 20px 0;
-    }
-    .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-  width: 156px;
-  height: 30px;
-  background-image: url("logo.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-    .contact-btn {
-      background-color: #1E78F1;
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 50px;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 0.9rem;
-      display: inline-block;
-    }
-    
-    /* HERO SECTION */
-    .hero {
-      text-align: left;
-      padding: 50px 0;
-      border-bottom: 1px solid #000;  /* Divider generado por el cierre de la sección */
-    }
-    .heading-3.ch {
-      max-width: 43ch;
-      margin: 0 auto 1.5rem auto;
-      font-size: 2.5rem;
-      line-height: 1.2;
-      font-family: Roboto, sans-serif;
-      font-weight: 700;
-    }
-    .bold-text {
-      font-weight: 700;
-    }
-  .text-span-2 {
-  display: inline;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  padding: 0 0.1em;
-  background-image: url("highlight.svg");
-  background-repeat: repeat-x;
-  background-position: left bottom;
-  background-size: auto 0.6em;
-}
-
-    @media screen and (max-width: 767px) {
-      .heading-3.ch {
-        max-width: none;
-        font-size: 1.5rem;
-      }
-    }
-
-
-
-  /* OUR PHILOSOPHY */
-   .philosophy-section {
-  padding: 40px 0;
-}
-    .philosophy-title {
-  margin-bottom: 2rem;
-  font-size: 1.5rem; /* tamaño aumentado */
-  font-weight: 700;
-}
-    .grid-content-wrapper {
-  margin-top: 0.5rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-
-    .philosophy-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr; /* 2 columnas en desktop */
-      gap: 6rem 3rem;
-    }
-    .philosophy-item {
-      display: flex;
-      flex-direction: column;
-    }
-    .philosophy-heading {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #000;
-      margin-bottom: 0.5rem;
-    }
-    .philosophy-grid {
-  counter-reset: philosophy-counter; /* Resetea el contador */
-}
-
-.philosophy-heading::before {
-  counter-increment: philosophy-counter; /* Incrementa el contador por cada ítem */
-  content: counter(philosophy-counter, decimal-leading-zero) " – ";
-  opacity: 0.4;
-  margin-right: 0.25rem;
-}
-    .philosophy-text {
-      font-size: 1.3rem;
-      line-height: 1.6;
-      color: #000;
-      margin: 0;
-    }
-    @media (max-width: 767px) {
-      .philosophy-grid {
-        grid-template-columns: 1fr; /* Se apilan en una columna */
-      }
-    }
-
-
-    /* OUR DIFFERENCE */
-.difference-section {
-  padding: 40px 0;
-  border-top: 1px solid #000; /* línea de separación superior (opcional) */
-}
-
-.difference-title {
-  margin-bottom: 2rem;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #000;
-}
-
-.grid-content-wrapper {
-  margin-top: 0.5rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-
-/* Grid principal con 2 columnas en desktop */
-.difference-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-.difference-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra el contenido en columna */
-  text-align: center;
-}
-
-/* Cuadrado negro placeholder para la ilustración */
-.black-square {
-  width: 6rem;
-  height: 6rem;
-  background-color: #000;
-  margin-bottom: 1rem;
-}
-
-/* Encabezado de cada columna (Arbour Capital, Private Equity) */
-.difference-heading {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 1rem;
-}
-
-/* Grid de 2 columnas para checkbox y texto */
-.grid-2 {
-  display: grid;
-  grid-template-columns: auto 1fr; 
-  gap: 0.5rem 1rem; 
-  text-align: left;
-  align-items: start;
-  justify-content: start;
-  width: 100%;
-  max-width: 250px; /* Ajusta si quieres un ancho específico */
-  margin: 0 auto;   /* Centra el grid si tiene ancho fijo */
-}
-
-/* Checkbox de “check” */
-.checkbox {
-  width: 1.3rem;
-  height: 1.3rem;
-  background-image: url("https://uploads-ssl.webflow.com/641ce32acb5b0ed10ff0c5b9/648066aa4781c62684799c91_noun-check-929005.svg");
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: 70%;
-  border: 1px solid #000;
-  font-size: 1.3rem;
-  position: relative;
-  top: 0.2rem;
-}
-
-/* Checkbox de “X” (o redondo) */
-.checkbox.round {
-  background-image: url("https://uploads-ssl.webflow.com/641ce32acb5b0ed10ff0c5b9/6480671362f7edb0c7411b00_noun-x-1890803.svg");
-  border-radius: 50%;
-}
-
-/* Responsive: 1 columna en pantallas pequeñas */
-@media (max-width: 767px) {
-  .difference-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-
-    /* OUR PROCESS SECTION */
-.process-section {
-  padding: 40px 0;
-}
-
-.process-title {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  font-weight: 700;
-  color: #000;
-  text-align: left;
-}
-
-/* Wrapper para la grid (usa el mismo padding que .grid-content-wrapper si lo necesitás) */
-.grid-content-wrapper {
-  margin-top: 0.5rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-
-/* Layout Desktop: usa grid-auto-flow: column para colocar los items en fila */
-.process-grid.desktop {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-/* Estilos para cada paso */
-.process-grid.desktop .step {
-  text-align: center;
-}
-
-.process-grid.desktop .heading-6 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #000;
-}
-
-/* Flechas: usa las mismas rutas y aplica transformaciones para invertir o desplazar si es necesario */
-.process-grid.desktop .image-2 {
-  width: 30px;
-  height: auto;
-}
-
-.process-grid.desktop .image-2.flip {
-  transform: scaleX(-1);
-}
-
-.process-grid.desktop .image-2.flip.shifted {
-  transform: scaleX(-1) translateX(-5px);
-}
-
-/* Doodles decorativos */
-.process-grid.desktop .image-3 {
-  width: 40px; /* Doodle circle */
-}
-
-.process-grid.desktop .image-4 {
-  width: 100px; /* Squiggle */
-  margin-top: 1rem;
-}
-
-/* Layout Mobile: se apilan en columna */
-.process-grid.mobile {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  text-align: center;
-}
-
-.process-grid.mobile .heading-6 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #000;
-}
-
-.process-grid.mobile .image-2.mobile {
-  width: 30px;
-  height: auto;
-  margin: 0 auto;
-}
-
-.process-grid.mobile .squiggle {
-  width: 100px;
-  margin: 0 auto;
-}
-
-.process-grid.mobile .ring {
-  width: 40px;
-  margin: 0 auto;
-}
-
-/* Mostrar layout desktop en pantallas amplias, mobile en pantallas pequeñas */
-@media screen and (max-width: 767px) {
-  .process-grid.desktop {
-    display: none;
-  }
-  .process-grid.mobile {
-    display: grid;
-  }
-  .grid-content-wrapper {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
-
-
-
-    
-  </style>
-</head>
-<body>
-  <div class="page-wrapper">
-    <!-- HEADER -->
-    <header class="page-header">
-      <div class="container header-content">
-        <div class="logo"></div>
-        <a href="#" class="contact-btn">CONTACT</a>
-      </div>
-    </header>
-    
-    <div class="container">
-      <!-- HERO SECTION -->
-      <section class="hero">
-        <h1 class="heading-3 ch">
-          <strong class="bold-text">We turn newsletters into on-demand content.</strong><br>
-          <span class="text-span-2">
-            A clutter-free experience for readers.
-            <strong class="bold-text"> Real attention for brands.</strong>
-          </span>
-        </h1>
-      </section>
+      <div class="container">
+        <!-- HERO SECTION -->
+        <section class="hero">
+          <h1 class="heading-3 ch">
+            <strong class="bold-text"
+              >We turn newsletters into on-demand content.</strong
+            ><br />
+            <span class="text-span-2">
+              A clutter-free experience for readers.
+              <strong class="bold-text"> Real attention for brands.</strong>
+            </span>
+          </h1>
+        </section>
 
         <!-- OUR PHILOSOPHY -->
-  <section class="philosophy-section">
-  <div class="container">
-    <h2 class="philosophy-title">Our philosophy</h2>
-    <div class="grid-content-wrapper">
-      <div class="philosophy-grid">
-        <!-- Bloque 01 -->
-        <div class="philosophy-item">
-          <h3 class="philosophy-heading">Keep it calm</h3>
-          <p class="philosophy-text">
-            You shouldn’t fear your inbox. Flowletter lets you follow content without stress or clutter.
-          </p>
-        </div>
-        <!-- Bloque 02 -->
-        <div class="philosophy-item">
-          <h3 class="philosophy-heading">Respect readers</h3>
-          <p class="philosophy-text">
-            We don’t track you or bait you. We just help you read what you care about, quietly.
-          </p>
-        </div>
-        <!-- Bloque 03 -->
-        <div class="philosophy-item">
-          <h3 class="philosophy-heading">On your terms</h3>
-          <p class="philosophy-text">
-            You’re in control. Follow, unfollow, or pause anytime. Notifications are always optional.
-          </p>
-        </div>
-        <!-- Bloque 04 -->
-        <div class="philosophy-item">
-          <h3 class="philosophy-heading">No noise, no tricks</h3>
-          <p class="philosophy-text">
-            No dark patterns. No popups. No guilt. Just content, available when you want it.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <section class="difference-section">
-  <div class="container">
-    <h2 class="difference-title">Our difference</h2>
-    <div class="grid-content-wrapper">
-      <div class="difference-grid">
-        <!-- Columna 1: Flowletter -->
-        <div class="difference-wrapper">
-          <div class="black-square"></div>
-          <h3 class="difference-heading">Flowletter</h3>
-          <div class="grid-2">
-            <div class="checkbox"></div>
-            <p>One-click follow/unfollow</p>
-            <div class="checkbox"></div>
-            <p>No inbox clutter</p>
-            <div class="checkbox"></div>
-            <p>Searchable reading history</p>
-            <div class="checkbox"></div>
-            <p>Reader-first experience</p>
-            <div class="checkbox"></div>
-            <p>No tracking or data selling</p>
+        <section class="philosophy-section">
+          <div class="container">
+            <h2 class="philosophy-title">Our philosophy</h2>
+            <div class="grid-content-wrapper">
+              <div class="philosophy-grid">
+                <!-- Bloque 01 -->
+                <div class="philosophy-item">
+                  <h3 class="philosophy-heading">Keep it calm</h3>
+                  <p class="philosophy-text">
+                    You shouldn’t fear your inbox. Flowletter lets you follow
+                    content without stress or clutter.
+                  </p>
+                </div>
+                <!-- Bloque 02 -->
+                <div class="philosophy-item">
+                  <h3 class="philosophy-heading">Respect readers</h3>
+                  <p class="philosophy-text">
+                    We don’t track you or bait you. We just help you read what
+                    you care about, quietly.
+                  </p>
+                </div>
+                <!-- Bloque 03 -->
+                <div class="philosophy-item">
+                  <h3 class="philosophy-heading">On your terms</h3>
+                  <p class="philosophy-text">
+                    You’re in control. Follow, unfollow, or pause anytime.
+                    Notifications are always optional.
+                  </p>
+                </div>
+                <!-- Bloque 04 -->
+                <div class="philosophy-item">
+                  <h3 class="philosophy-heading">No noise, no tricks</h3>
+                  <p class="philosophy-text">
+                    No dark patterns. No popups. No guilt. Just content,
+                    available when you want it.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <!-- Columna 2: Traditional Newsletters -->
-        <div class="difference-wrapper">
-          <div class="black-square"></div>
-          <h3 class="difference-heading">Traditional Newsletters</h3>
-          <div class="grid-2">
-            <div class="checkbox round"></div>
-            <p>Hard to unsubscribe</p>
-            <div class="checkbox round"></div>
-            <p>Inbox overload</p>
-            <div class="checkbox round"></div>
-            <p>No archive or search</p>
-            <div class="checkbox round"></div>
-            <p>Designed for delivery, not reading</p>
-            <div class="checkbox round"></div>
-            <p>Trackers and data monetization</p>
+        </section>
+
+        <section class="difference-section">
+          <div class="container">
+            <h2 class="difference-title">Our difference</h2>
+            <div class="grid-content-wrapper">
+              <div class="difference-grid">
+                <!-- Columna 1: Flowletter -->
+                <div class="difference-wrapper">
+                  <div class="black-square"></div>
+                  <h3 class="difference-heading">Flowletter</h3>
+                  <div class="grid-2">
+                    <div class="checkbox"></div>
+                    <p>One-click follow/unfollow</p>
+                    <div class="checkbox"></div>
+                    <p>No inbox clutter</p>
+                    <div class="checkbox"></div>
+                    <p>Searchable reading history</p>
+                    <div class="checkbox"></div>
+                    <p>Reader-first experience</p>
+                    <div class="checkbox"></div>
+                    <p>No tracking or data selling</p>
+                  </div>
+                </div>
+                <!-- Columna 2: Traditional Newsletters -->
+                <div class="difference-wrapper">
+                  <div class="black-square"></div>
+                  <h3 class="difference-heading">Traditional Newsletters</h3>
+                  <div class="grid-2">
+                    <div class="checkbox round"></div>
+                    <p>Hard to unsubscribe</p>
+                    <div class="checkbox round"></div>
+                    <p>Inbox overload</p>
+                    <div class="checkbox round"></div>
+                    <p>No archive or search</p>
+                    <div class="checkbox round"></div>
+                    <p>Designed for delivery, not reading</p>
+                    <div class="checkbox round"></div>
+                    <p>Trackers and data monetization</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
+
+        <section class="process-section">
+          <div class="container">
+            <h2 class="process-title">Our process</h2>
+            <div class="grid-content-wrapper">
+              <!-- Layout Desktop -->
+              <div class="process-grid desktop">
+                <!-- Paso 1 -->
+                <div class="step">
+                  <h3 class="heading-6">
+                    Discovery call<br /><strong>Day 1</strong>
+                  </h3>
+                </div>
+                <img
+                  src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg"
+                  loading="lazy"
+                  alt="Arrow"
+                  class="image-2"
+                />
+
+                <!-- Paso 2 -->
+                <div class="step">
+                  <h3 class="heading-6">
+                    Assess initial info<br /><strong>Day 1 to 14</strong>
+                  </h3>
+                </div>
+                <img
+                  src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg"
+                  loading="lazy"
+                  alt="Arrow"
+                  class="image-2 flip"
+                />
+
+                <!-- Paso 3 -->
+                <div class="step">
+                  <h3 class="heading-6">
+                    Make an offer<br /><strong>2 Weeks</strong>
+                  </h3>
+                </div>
+                <img
+                  src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg"
+                  loading="lazy"
+                  alt="Arrow"
+                  class="image-2 flip shifted"
+                />
+
+                <!-- Paso 4 -->
+                <div class="step">
+                  <h3 class="heading-6">
+                    Close the deal<br /><strong>3 Months</strong>
+                  </h3>
+                </div>
+
+                <!-- Decorativos -->
+                <img
+                  src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/6481950f2b75cd4512c77cc2_4%20noun-doodle-circle-2405565.svg"
+                  loading="lazy"
+                  alt="Doodle Circle"
+                  class="image-3"
+                />
+                <img
+                  src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648196678d3279805da4fb3d_squiggle.svg"
+                  loading="lazy"
+                  alt="Squiggle"
+                  class="image-4"
+                />
+              </div>
+
+              <!-- Layout Mobile -->
+              <div class="process-grid mobile">
+                <h3 class="heading-6">
+                  Discovery call<br /><strong>Day 1</strong>
+                </h3>
+                <img
+                  src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg"
+                  loading="lazy"
+                  alt="Arrow"
+                  class="image-2 mobile _1"
+                />
+
+                <h3 class="heading-6">
+                  Assess initial info<br /><strong>Day 1 to 14</strong>
+                </h3>
+                <img
+                  src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg"
+                  loading="lazy"
+                  alt="Arrow"
+                  class="image-2 mobile flip"
+                />
+
+                <h3 class="heading-6">
+                  Make an offer<br /><strong>2 Weeks</strong>
+                </h3>
+                <img
+                  src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg"
+                  loading="lazy"
+                  alt="Arrow"
+                  class="image-2 mobile"
+                />
+
+                <h3 class="heading-6">
+                  Close the deal<br /><strong>3 Months</strong>
+                </h3>
+                <img
+                  src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648196678d3279805da4fb3d_squiggle.svg"
+                  loading="lazy"
+                  alt="Squiggle"
+                  class="squiggle"
+                />
+                <img
+                  src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/6481950f2b75cd4512c77cc2_4%20noun-doodle-circle-2405565.svg"
+                  loading="lazy"
+                  alt="Doodle Circle"
+                  class="ring"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="process-section">
-  <div class="container">
-    <h2 class="process-title">Our process</h2>
-    <div class="grid-content-wrapper">
-      <!-- Layout Desktop -->
-      <div class="process-grid desktop">
-        <!-- Paso 1 -->
-        <div class="step">
-          <h3 class="heading-6">Discovery call<br><strong>Day 1</strong></h3>
-        </div>
-        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg" loading="lazy" alt="Arrow" class="image-2" />
-        
-        <!-- Paso 2 -->
-        <div class="step">
-          <h3 class="heading-6">Assess initial info<br><strong>Day 1 to 14</strong></h3>
-        </div>
-        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg" loading="lazy" alt="Arrow" class="image-2 flip" />
-        
-        <!-- Paso 3 -->
-        <div class="step">
-          <h3 class="heading-6">Make an offer<br><strong>2 Weeks</strong></h3>
-        </div>
-        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg" loading="lazy" alt="Arrow" class="image-2 flip shifted" />
-        
-        <!-- Paso 4 -->
-        <div class="step">
-          <h3 class="heading-6">Close the deal<br><strong>3 Months</strong></h3>
-        </div>
-        
-        <!-- Decorativos -->
-        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/6481950f2b75cd4512c77cc2_4%20noun-doodle-circle-2405565.svg" loading="lazy" alt="Doodle Circle" class="image-3" />
-        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648196678d3279805da4fb3d_squiggle.svg" loading="lazy" alt="Squiggle" class="image-4" />
-      </div>
-      
-      <!-- Layout Mobile -->
-      <div class="process-grid mobile">
-        <h3 class="heading-6">Discovery call<br><strong>Day 1</strong></h3>
-        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg" loading="lazy" alt="Arrow" class="image-2 mobile _1" />
-        
-        <h3 class="heading-6">Assess initial info<br><strong>Day 1 to 14</strong></h3>
-        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg" loading="lazy" alt="Arrow" class="image-2 mobile flip" />
-        
-        <h3 class="heading-6">Make an offer<br><strong>2 Weeks</strong></h3>
-        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648192758b4dcf6bfea7167e_noun-arrow-1098123.svg" loading="lazy" alt="Arrow" class="image-2 mobile" />
-        
-        <h3 class="heading-6">Close the deal<br><strong>3 Months</strong></h3>
-        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/648196678d3279805da4fb3d_squiggle.svg" loading="lazy" alt="Squiggle" class="squiggle" />
-        <img src="https://cdn.prod.website-files.com/641ce32acb5b0ed10ff0c5b9/6481950f2b75cd4512c77cc2_4%20noun-doodle-circle-2405565.svg" loading="lazy" alt="Doodle Circle" class="ring" />
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    </div>
-  </div>
-</body>
+  </body>
 </html>
