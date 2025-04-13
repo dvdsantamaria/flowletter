@@ -1,122 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flowletter Layout - Header & Hero</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page-wrapper">
-      <!-- HEADER -->
-      <header class="page-header">
-        <div class="container header-content">
-          <div class="logo"></div>
-          <a href="#" class="contact-btn">CONTACT</a>
-        </div>
-      </header>
+<head>
+  <meta charset="UTF-8">
+  <title>Scroll Synced Video with HD Ready Label</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      <div class="container">
-        <!-- HERO SECTION -->
-        <section class="hero">
-          <h1 class="heading-3 ch">
-            <strong class="bold-text"
-              >We turn newsletters into on-demand content.</strong
-            ><br />
-            <span class="text-span-2">
-              A clutter-free experience for readers.
-              <strong class="bold-text"> Real attention for brands.</strong>
-            </span>
-          </h1>
-        </section>
+    body {
+      font-family: sans-serif;
+    }
 
-        <!-- OUR PHILOSOPHY -->
-        <section class="philosophy-section">
-          <div class="container">
-            <h2 class="philosophy-title">Our philosophy</h2>
-            <div class="grid-content-wrapper">
-              <div class="philosophy-grid">
-                <!-- Bloque 01 -->
-                <div class="philosophy-item">
-                  <h3 class="philosophy-heading">Keep it calm</h3>
-                  <p class="philosophy-text">
-                    You shouldn’t fear your inbox. Flowletter lets you follow
-                    content without stress or clutter.
-                  </p>
-                </div>
-                <!-- Bloque 02 -->
-                <div class="philosophy-item">
-                  <h3 class="philosophy-heading">Respect readers</h3>
-                  <p class="philosophy-text">
-                    We don’t track you or bait you. We just help you read what
-                    you care about, quietly.
-                  </p>
-                </div>
-                <!-- Bloque 03 -->
-                <div class="philosophy-item">
-                  <h3 class="philosophy-heading">On your terms</h3>
-                  <p class="philosophy-text">
-                    You’re in control. Follow, unfollow, or pause anytime.
-                    Notifications are always optional.
-                  </p>
-                </div>
-                <!-- Bloque 04 -->
-                <div class="philosophy-item">
-                  <h3 class="philosophy-heading">No noise, no tricks</h3>
-                  <p class="philosophy-text">
-                    No dark patterns. No popups. No guilt. Just content,
-                    available when you want it.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+    .spacer {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f0f0;
+    }
 
-        <section class="difference-section">
-          <div class="container">
-            <h2 class="difference-title">Our difference</h2>
-            <div class="grid-content-wrapper">
-              <div class="difference-grid">
-                <!-- Columna 1: Flowletter -->
-                <div class="difference-wrapper">
-                  <div class="black-square"></div>
-                  <h3 class="difference-heading">Flowletter</h3>
-                  <div class="grid-2">
-                    <div class="checkbox"></div>
-                    <p>One-click follow/unfollow</p>
-                    <div class="checkbox"></div>
-                    <p>No inbox clutter</p>
-                    <div class="checkbox"></div>
-                    <p>Searchable reading history</p>
-                    <div class="checkbox"></div>
-                    <p>Reader-first experience</p>
-                    <div class="checkbox"></div>
-                    <p>No tracking or data selling</p>
-                  </div>
-                </div>
-                <!-- Columna 2: Traditional Newsletters -->
-                <div class="difference-wrapper">
-                  <div class="black-square"></div>
-                  <h3 class="difference-heading">Traditional Newsletters</h3>
-                  <div class="grid-2">
-                    <div class="checkbox round"></div>
-                    <p>Hard to unsubscribe</p>
-                    <div class="checkbox round"></div>
-                    <p>Inbox overload</p>
-                    <div class="checkbox round"></div>
-                    <p>No archive or search</p>
-                    <div class="checkbox round"></div>
-                    <p>Designed for delivery, not reading</p>
-                    <div class="checkbox round"></div>
-                    <p>Trackers and data monetization</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  </body>
+    #video-scroll-zone {
+      height: 8000px;
+      position: relative;
+      background: #111;
+    }
+
+    #scroll-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .video-text {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      color: white;
+      font-size: 1.5rem;
+      text-shadow: 0 0 8px black;
+      z-index: 10;
+    }
+
+    #debug-time {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      color: white;
+      background: rgba(0,0,0,0.6);
+      padding: 5px 10px;
+      font-family: monospace;
+      border-radius: 4px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="spacer">
+    <h2>Scroll down to control the video</h2>
+  </div>
+
+  <section id="video-scroll-zone">
+    <video id="scroll-video" src="bush-low.mp4" preload="auto" muted playsinline></video>
+    <div class="video-text" id="status-label">Scroll-synced video (HD loading…)</div>
+    <div id="debug-time">0.00s</div>
+  </section>
+
+  <div class="spacer">
+    <h2>You've reached the end</h2>
+  </div>
+
+  <script>
+    const video = document.getElementById("scroll-video");
+    const debug = document.getElementById("debug-time");
+    const label = document.getElementById("status-label");
+
+    const duration = 11;
+    let loadedHD = false;
+
+    const updateVideoTime = () => {
+      const zone = document.getElementById("video-scroll-zone");
+      const zoneHeight = zone.offsetHeight;
+      const start = zone.offsetTop;
+      const end = start + zoneHeight - window.innerHeight;
+
+      const scrollY = Math.min(Math.max(window.scrollY, start), end);
+      const progress = (scrollY - start) / (end - start);
+      const newTime = progress * duration;
+
+      debug.textContent = `${newTime.toFixed(2)}s`;
+
+      if (Math.abs(video.currentTime - newTime) > 0.05) {
+        video.currentTime = newTime;
+      }
+
+      requestAnimationFrame(updateVideoTime);
+    };
+
+    video.addEventListener("loadeddata", () => {
+      requestAnimationFrame(updateVideoTime);
+    });
+
+    const swapToHD = () => {
+      if (loadedHD) return;
+      loadedHD = true;
+
+      const currentTime = video.currentTime;
+      const wasPaused = video.paused;
+
+      video.src = "bush.mp4";
+      video.load();
+      video.addEventListener("loadeddata", () => {
+        video.currentTime = currentTime;
+        if (!wasPaused) video.play();
+
+        // ✅ Actualizamos el texto al cargar HD
+        if (label) label.textContent = "Scroll-synced video (HD ready)";
+        console.log("Switched to HD video.");
+      });
+    };
+
+    // Swap HD solo si el video entra en pantalla (50% o más)
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        swapToHD();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(video);
+  </script>
+
+</body>
 </html>
